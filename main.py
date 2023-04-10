@@ -1,4 +1,4 @@
-import speech_recognition as sr
+import speech_recognition
 import os
 import torch
 import torchaudio
@@ -13,7 +13,7 @@ from google_scrapping import scrape_search
 def speech_2_text(number, recognizer):
     name = 'voice_' + str(number) + '.wav'
     text = str
-    with sr.Microphone() as source:
+    with speech_recognition.Microphone() as source:
         print('говорите')
         audio = recognizer.listen(source)
 
